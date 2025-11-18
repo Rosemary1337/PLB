@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk - TM Agro</title>
+    <link rel="stylesheet" href="globals.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        agro: {
+                            dark: '#1C352D',
+                            green: '#446D60',
+                            light: '#F2F2F2',
+                            white: '#FFFFFF',
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-agro-light">
+    <header class="bg-white h-[75px] sticky top-0 z-50 shadow-sm">
+        <div class="max-w-[1900px] mx-auto px-4 h-full flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <div class="w-[187px] h-[52px] bg-agro-light rounded"></div>
+
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="index.html"
+                        class="text-agro-dark text-base font-normal hover:font-semibold transition-all">Beranda</a>
+                    <a href="index.html#profil"
+                        class="text-agro-dark text-base font-normal hover:font-semibold transition-all">Profil</a>
+                    <a href="index.html#kategori"
+                        class="text-agro-dark text-base font-normal hover:font-semibold transition-all">Kategori</a>
+                    <a href="keranjang.html"
+                        class="text-agro-dark text-base font-normal hover:font-semibold transition-all">Belanja</a>
+                    <a href="#footer" class="text-agro-dark text-base font-normal hover:font-semibold transition-all">Call
+                        Center</a>
+                </nav>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="relative w-[584px] hidden xl:block">
+                    <div class="bg-[#F5F5F5] rounded-[30px] h-[50px] px-4 flex items-center gap-3">
+                        <svg class="w-6 h-6 text-agro-dark opacity-50" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <input type="text" placeholder="Cari Kebutuhan Anda"
+                            class="bg-transparent flex-1 text-base text-agro-dark placeholder:text-agro-dark placeholder:opacity-50 outline-none" />
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="keranjang.html"
+                        class="w-10 h-10 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors text-agro-dark text-base">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                    <a href="profil.html"
+                        class="w-[50px] h-[50px] flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors text-agro-dark text-base">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <div class="px-4 md:px-8 lg:px-20 py-8">
+        <h1 class="text-agro-dark text-xl md:text-3xl font-semibold">Detail Produk</h1>
+    </div>
+
+    <!-- Product Section -->
+    <section class="bg-agro-dark px-4 md:px-8 lg:px-11 py-12 md:py-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Product Image -->
+                <div class="w-full aspect-square bg-[#D9D9D9] rounded-[20px]"></div>
+
+                <!-- Product Info -->
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-agro-light text-xl md:text-3xl font-semibold mb-6">Nama Produk</h2>
+                        <p class="text-agro-light/70 text-base md:text-lg leading-relaxed mb-8">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet quam quis malesuada
+                            scelerisque. Nam ultricies diam sit amet nibh aliquam viverra. Suspendisse at nibh
+                            ultricies, tincidunt arcu quis, porttitor ipsum. Sed ultricies nec nulla vitae sollicitudin.
+                            Nullam pellentesque varius ante, et consectetur dolor feugiat nec.
+                        </p>
+                        <p class="text-agro-light text-xl md:text-3xl font-semibold">Rp100.000</p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                        <button
+                            class="bg-agro-light text-agro-dark hover:bg-agro-light/90 rounded-[20px] h-[78px] text-base md:text-lg font-medium px-8 transition-colors">
+                            Beli Sekarang
+                        </button>
+                        <button
+                            class="bg-agro-dark border border-agro-light text-agro-light hover:bg-agro-dark/90 rounded-[20px] h-[78px] text-base md:text-lg font-medium px-8 transition-colors">
+                            Masukkan Keranjang
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Description Section -->
+    <section class="bg-agro-dark px-4 md:px-8 lg:px-14 py-12 md:py-16">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-agro-light text-xl md:text-3xl font-semibold mb-8">Deskripsi</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="w-full aspect-square bg-[#D9D9D9] rounded-[20px]"></div>
+                <div class="w-full aspect-square bg-[#D9D9D9] rounded-[20px]"></div>
+                <div class="w-full aspect-square bg-[#D9D9D9] rounded-[20px]"></div>
+                <div class="w-full aspect-square bg-[#D9D9D9] rounded-[20px]"></div>
+            </div>
+
+            <div class="space-y-6 text-agro-light/70 text-sm md:text-base leading-relaxed">
+                <p>
+                    Nulla facilisi. Proin vitae orci nec sapien elementum vehicula at pretium odio. Etiam id ex nec leo
+                    gravida sagittis. In hac habitasse platea dictumst. Pellentesque malesuada fermentum pellentesque.
+                    Nam eget felis eleifend, varius urna quis, aliquam dui. Duis vitae risus non elit sodales rutrum.
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam
+                    quam quam, vehicula vitae massa a, maximus ornare ligula. Vivamus accumsan mi ut turpis condimentum
+                    pulvinar. Nullam tempus posuere nisi, eu consequat dolor ornare vitae. Aenean ut tincidunt urna,
+                    eget ultrices mauris.
+                </p>
+                <p>
+                    Aenean consectetur malesuada leo, vitae sollicitudin mi facilisis id. Phasellus vitae nisi vel nunc
+                    ultrices pulvinar non in purus. Donec rhoncus risus turpis, viverra hendrerit elit pulvinar ac.
+                    Etiam cursus ipsum quis tortor aliquet porta. Sed suscipit pharetra lectus quis elementum. Phasellus
+                    bibendum tellus tempus sapien sodales, a mattis nibh efficitur. Nullam eu sem molestie, commodo
+                    libero non, viverra turpis. Sed egestas nibh quis sem dapibus, eget faucibus justo vehicula.
+                    Vestibulum eleifend maximus metus, sed bibendum turpis euismod eget.
+                </p>
+            </div>
+
+            <div class="mt-6 text-agro-light/70 text-sm md:text-base">
+                <p>Berat: 1 KG</p>
+                <p>Stok: 75</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white px-4 md:px-8 lg:px-20 py-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <iframe width="300" height="200" style="border:0" loading="lazy" allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA4S2gmkurOTu_gVRPP68gxWxPFTQ2mzP4 &q=Toko+Tani+Maju">
+            </iframe>
+    
+            <div class="text-agro-green/70">
+                <h4 class="font-bold text-base md:text-lg mb-4 text-agro-green">Hubungi Kami</h4>
+                <p class="text-sm md:text-base leading-relaxed">
+                    Alamat: Jl. Raya Pertanian No. 45, Tulungagung, Indonesia<br />
+                    Telepon: +62 812-3456-7890<br />
+                    Email: support@tmagro.id<br />
+                    Layanan: Setiap Hari, 06.00-17.00
+                </p>
+            </div>
+    
+            <div class="text-agro-green/70">
+                <h4 class="font-bold text-base md:text-lg mb-4 text-agro-green">Informasi</h4>
+                <ul class="text-sm md:text-base leading-relaxed space-y-2">
+                    <li><a href="#" class="hover:text-agro-green transition-colors">Tentang Kami</a></li>
+                    <li><a href="#" class="hover:text-agro-green transition-colors">Blog Edukasi</a></li>
+                    <li><a href="#" class="hover:text-agro-green transition-colors">Kebijakan Privasi</a></li>
+                    <li><a href="#" class="hover:text-agro-green transition-colors">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</html>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belanja</title>
+    <link rel="stylesheet" href="globals.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Plus Jakarta Sans', -apple-system, Roboto, Helvetica, sans-serif;
+        }
+
+        :root {
+            --color-dark: #1C352D;
+            --color-green: #446D60;
+            --color-light: #F2F2F2;
+            --color-white: #FFFFFF;
+        }
+
+        .bg-agro-dark {
+            background-color: var(--color-dark);
+        }
+
+        .bg-agro-green {
+            background-color: var(--color-green);
+        }
+
+        .bg-agro-light {
+            background-color: var(--color-light);
+        }
+
+        .text-agro-dark {
+            color: var(--color-dark);
+        }
+
+        .text-agro-green {
+            color: var(--color-green);
+        }
+
+        .text-agro-light {
+            color: var(--color-light);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        agro: {
+                            dark: '#1C352D',
+                            green: '#446D60',
+                            light: '#F2F2F2',
+                            white: '#FFFFFF',
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-agro-light">
+    <header class="bg-white h-[75px] fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="max-w-[1900px] mx-auto px-4 h-full flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <div class="w-[187px] h-[52px] bg-agro-light rounded"></div>
+
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="index.html"
+                        class="text-agro-dark text-base font-normal hover:font-semibold transition-all">Beranda</a>
+                    <a href="index.html#profil"
+                        class="text-agro-dark text-base font-normal hover:font-semibold transition-all">Profil</a>
+                    <a href="index.html#kategori"
+                        class="text-agro-dark text-base font-normal hover:font-semibold transition-all">Kategori</a>
+                    <a href="keranjang.html"
+                        class="text-agro-dark text-base font-normal hover:font-semibold transition-all">Belanja</a>
+                    <a href="#footer" class="text-agro-dark text-base font-normal hover:font-semibold transition-all">Call
+                        Center</a>
+                </nav>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="relative w-[584px] hidden xl:block">
+                    <div class="bg-[#F5F5F5] rounded-[30px] h-[50px] px-4 flex items-center gap-3">
+                        <svg class="w-6 h-6 text-agro-dark opacity-50" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <input type="text" placeholder="Cari Kebutuhan Anda"
+                            class="bg-transparent flex-1 text-base text-agro-dark placeholder:text-agro-dark placeholder:opacity-50 outline-none" />
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="keranjang.html"
+                        class="w-10 h-10 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors text-agro-dark text-base">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                    <a href="profil.html"
+                        class="w-[50px] h-[50px] flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors text-agro-dark text-base">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-agro-dark py-16 lg:py-24">
+        <div class="max-w-[1900px] mx-auto px-4">
+            <h1 class="text-agro-light text-xl lg:text-3xl font-bold text-center mb-12 lg:mb-16 opacity-95">
+                Kategori
+            </h1>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-[1658px] mx-auto">
+                <a href="detail.html" class="block">
+                    <div
+                        class="bg-agro-light rounded-[20px] p-8 flex flex-col items-center justify-center min-h-[400px] hover:shadow-lg transition-shadow cursor-pointer">
+                        <div class="w-[200px] h-[200px] flex items-center justify-center mb-8">
+                            <svg width="200" height="200" viewBox="0 0 200 200" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                d="M172.5 27.5C172.5 27.5 160.833 25 143.333 25C97.4999 25 13.3332 42.5 26.6666 173.333C35.8332 174.167 44.9999 175 53.3332 175C202.5 175 172.5 27.5 172.5 27.5ZM58.3332 141.667C58.3332 141.667 58.3332 58.3333 141.667 58.3333C141.667 58.3333 91.6666 75 58.3332 141.667Z"
+                                fill="#1C352D" />
+                            </svg>
+                        </div>
+                        <h2 class="text-agro-dark text-lg font-bold">Benih</h2>
+                    </div>
+                </a>
+
+                <a href="detail.html" class="block">
+                    <div
+                        class="bg-agro-light rounded-[20px] p-8 flex flex-col items-center justify-center min-h-[400px] hover:shadow-lg transition-shadow cursor-pointer">
+                        <div class="w-[200px] h-[200px] flex items-center justify-center mb-8">
+                            <svg width="200" height="200" viewBox="0 0 200 200" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                d="M156.25 62.5C157.908 62.5 159.497 61.8415 160.669 60.6694C161.842 59.4973 162.5 57.9076 162.5 56.25C162.488 44.6506 157.874 33.5298 149.672 25.3278C141.47 17.1258 130.349 12.5124 118.75 12.5H62.5C59.1848 12.5 56.0054 13.817 53.6612 16.1612C51.317 18.5054 50 21.6848 50 25V62.5C50 67.4728 48.0246 72.2419 44.5083 75.7583C40.9919 79.2746 36.2228 81.25 31.25 81.25C29.5924 81.25 28.0027 81.9085 26.8306 83.0806C25.6585 84.2527 25 85.8424 25 87.5C25 89.1576 25.6585 90.7473 26.8306 91.9194C28.0027 93.0915 29.5924 93.75 31.25 93.75C39.538 93.75 47.4866 90.4576 53.3471 84.5971C59.2076 78.7366 62.5 70.788 62.5 62.5H87.5V81.7344C87.508 84.547 86.8796 87.325 85.662 89.8604C84.4443 92.3957 82.6689 94.6229 80.4688 96.375L67.9688 106.367C64.3024 109.287 61.3439 112.999 59.3145 117.224C57.2851 121.449 56.2375 126.078 56.25 130.766V175C56.25 178.315 57.567 181.495 59.9112 183.839C62.2554 186.183 65.4348 187.5 68.75 187.5H150C153.315 187.5 156.495 186.183 158.839 183.839C161.183 181.495 162.5 178.315 162.5 175V165.211C162.51 129.274 153.368 93.9265 135.938 62.5H156.25ZM62.5 25H118.75C125.951 25.0103 132.928 27.5022 138.507 32.0559C144.085 36.6096 147.923 42.9469 149.375 50H62.5V25Z"
+                                fill="#1C352D" />
+                            </svg>
+                        </div>
+                        <h2 class="text-agro-dark text-lg font-bold">Peralatan</h2>
+                    </div>
+                </a>
+
+                <a href="detail.html" class="block">
+                    <div
+                        class="bg-agro-light rounded-[20px] p-8 flex flex-col items-center justify-center min-h-[400px] hover:shadow-lg transition-shadow cursor-pointer">
+                        <div class="w-[200px] h-[200px] flex items-center justify-center mb-8">
+                            <svg width="200" height="200" viewBox="0 0 200 200" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                d="M120 33.3333C123.333 33.3333 123.333 40 120 40C116.667 43.3333 76.6666 43.3333 73.3333 40C69.9999 40 69.9999 33.3333 73.3333 33.3333H79.9999V13.3333C79.9999 6.66668 113.333 6.66668 113.333 13.3333V33.3333H120ZM120 46.6667C113.333 50 79.9999 50 73.3333 46.6667C67.4666 46.6667 53.3333 60 53.3333 66.6667V186.667C53.3333 193.333 160 193.333 160 186.667V113.333C160 80 140 46.6667 120 46.6667ZM130 113.333C126.667 110 123.333 96.6667 123.333 83.3333C123.333 66.6667 130 63.3333 133.333 70C140 80 146.667 96.6667 146.667 113.333C146.667 123.333 133.333 120 130 113.333Z"
+                                fill="#1C352D" />
+                            </svg>
+                        </div>
+                        <h2 class="text-agro-dark text-lg font-bold">Pestisida</h2>
+                    </div>
+                </a>
+
+                <a href="detail.html" class="block">
+                    <div
+                        class="bg-agro-light rounded-[20px] p-8 flex flex-col items-center justify-center min-h-[400px] hover:shadow-lg transition-shadow cursor-pointer">
+                        <div class="w-[200px] h-[200px] flex items-center justify-center mb-8">
+                            <svg width="200" height="200" viewBox="0 0 200 200" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M94.1797 8.55859C59.1406 8.5 26.6055 9.52343 27.0156 11.7891L35.6406 25.9062C58.8281 23.9141 80.9375 23.1914 103.086 23.3398C123.867 23.4766 144.688 24.3828 166.406 25.7187L178.594 12.7187C176.836 10.0859 133.906 8.625 94.1797 8.55859ZM95.6641 30.3594C76.4844 30.4062 57.2656 31.1367 37.1914 32.8281C28.6797 81.1328 23.9648 140.078 35.043 176.445L24.7188 188.555C74.7656 192.305 125.703 193.516 174.18 191.016L162.5 177.109C170.039 135.625 167.695 78.9844 162.578 32.5312C142.578 31.3359 123.398 30.5391 104.258 30.3867L156.68 78.5156H128.828C130.312 87.5391 136.797 99.7266 143.633 111.016C147.5 117.422 151.445 123.633 154.453 129.102C157.461 134.57 159.766 139.141 159.766 143.75C159.766 154.687 152.383 163.672 141.523 169.492C130.664 175.352 116.094 178.516 100 178.516C83.9062 178.516 69.3359 175.352 58.4766 169.492C47.6172 163.672 40.2344 154.687 40.2344 143.75C40.2344 139.062 42.6563 134.492 45.8203 128.945C48.9844 123.398 53.0859 117.148 57.0703 110.664C64.1016 99.2969 70.5078 87.0312 71.4062 78.5156H40.625L95.6641 30.3594ZM99.9609 35.9727L59.375 71.4844H78.2422L78.5156 74.6875C79.5703 87.1484 71.1328 101.25 63.0469 114.375C58.9844 120.937 54.9219 127.148 51.9531 132.422C48.9453 137.656 47.2656 142.187 47.2656 143.75C47.2656 149.453 50 154.492 55.1172 158.828C76.2891 156.172 87.1484 154.688 96.6797 154.375C96.9141 151.055 97.3438 147.734 97.8906 144.531C83.5938 145.43 70.4297 141.602 57.4609 136.992C63.2813 125.742 73.9844 117.891 83.6328 117.93C85.4297 117.93 87.1875 118.164 88.8672 118.75C93.2422 120.156 97.1875 128.008 99.8047 134.609C100.664 130.508 101.484 126.992 101.836 124.414V124.375C102.188 121.953 101.211 115 99.9609 109.258C99.0625 105.117 98.125 101.484 97.6562 99.7656C95.1953 99.7656 93.0078 99.2969 91.5625 97.8125C81.6406 87.5 88.0859 68.4375 96.6016 57.8125C102.656 67.8906 110.547 78.75 118.477 86.25C116.758 92.0312 113.633 96.6797 107.578 98.75C106.758 98.8281 105.742 98.9453 104.727 99.1016C105.273 101.133 106.055 104.18 106.836 107.734C107.344 109.961 107.812 112.266 108.203 114.57C110.273 112.656 112.656 110.898 114.609 110.82H115.039C125.977 111.836 138.359 122.383 141.484 137.773C130.742 132.852 118.437 135.703 108.711 125.977C107.617 133.242 104.57 144.18 103.75 154.414C113.164 154.727 124.023 156.211 144.883 158.828C150 154.492 152.734 149.453 152.734 143.75C152.734 142.109 151.133 137.656 148.281 132.5C145.43 127.305 141.562 121.172 137.617 114.648C129.766 101.68 121.484 87.5781 121.484 75V71.4844H138.633L99.9609 35.9727ZM100 161.289C91.2891 161.289 82.0703 162.461 64.5703 164.688C73.8281 168.945 86.25 171.484 100 171.484C113.75 171.484 126.172 168.945 135.43 164.688C117.93 162.461 108.711 161.289 100 161.289Z"
+                                fill="#1C352D" />
+                            </svg>
+                        </div>
+                        <h2 class="text-agro-dark text-lg font-bold">Pupuk</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benih Section -->
+    <section class="py-16 lg:py-20">
+        <div class="max-w-[1900px] mx-auto px-4">
+            <h2 class="text-agro-dark text-xl lg:text-3xl font-semibold mb-12 lg:mb-16">
+                Benih
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 lg:gap-8">
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 lg:gap-8 mt-8">
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Peralatan Section -->
+    <section class="py-16 lg:py-20">
+        <div class="max-w-[1900px] mx-auto px-4">
+            <h2 class="text-agro-dark text-xl lg:text-3xl font-semibold mb-12 lg:mb-16">
+                Peralatan
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 lg:gap-8">
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 lg:gap-8 mt-8">
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pestisida Section -->
+    <section class="py-16 lg:py-20">
+        <div class="max-w-[1900px] mx-auto px-4">
+            <h2 class="text-agro-dark text-xl lg:text-3xl font-semibold mb-12 lg:mb-16">
+                Pestisida
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 lg:gap-8">
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 lg:gap-8 mt-8">
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pupuk Section -->
+    <section class="py-16 lg:py-20">
+        <div class="max-w-[1900px] mx-auto px-4">
+            <h2 class="text-agro-dark text-xl lg:text-3xl font-semibold mb-12 lg:mb-16">
+                Pupuk
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 lg:gap-8">
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 lg:gap-8 mt-8">
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="block">
+                    <div class="rounded-[20px] bg-agro-dark overflow-hidden w-full">
+                        <div class="h-[265px] bg-agro-green rounded-t-[20px]"></div>
+                        <div class="px-[18px] py-[15px]">
+                            <h3 class="text-agro-light text-base font-medium">Produk</h3>
+                            <p class="text-agro-light text-sm font-normal opacity-70">Deskripsi Produk</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white px-4 md:px-8 lg:px-20 py-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <iframe width="300" height="200" style="border:0" loading="lazy" allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA4S2gmkurOTu_gVRPP68gxWxPFTQ2mzP4 &q=Toko+Tani+Maju">
+            </iframe>
+    
+            <div class="text-agro-green/70">
+                <h4 class="font-bold text-base md:text-lg mb-4 text-agro-green">Hubungi Kami</h4>
+                <p class="text-sm md:text-base leading-relaxed">
+                    Alamat: Jl. Raya Pertanian No. 45, Tulungagung, Indonesia<br />
+                    Telepon: +62 812-3456-7890<br />
+                    Email: support@tmagro.id<br />
+                    Layanan: Setiap Hari, 06.00-17.00
+                </p>
+            </div>
+    
+            <div class="text-agro-green/70">
+                <h4 class="font-bold text-base md:text-lg mb-4 text-agro-green">Informasi</h4>
+                <ul class="text-sm md:text-base leading-relaxed space-y-2">
+                    <li><a href="#" class="hover:text-agro-green transition-colors">Tentang Kami</a></li>
+                    <li><a href="#" class="hover:text-agro-green transition-colors">Blog Edukasi</a></li>
+                    <li><a href="#" class="hover:text-agro-green transition-colors">Kebijakan Privasi</a></li>
+                    <li><a href="#" class="hover:text-agro-green transition-colors">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</html>
