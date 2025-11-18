@@ -1,2 +1,0 @@
-# PLB
-Praktik Lintas Bidang
