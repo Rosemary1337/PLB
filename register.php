@@ -26,6 +26,7 @@ if (($_SESSION['reg_attempts'] >= 3) && (time() - $_SESSION['last_reg_attempt'] 
     $email = trim($_POST['email']);
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm-password'];
+    $address = trim($_POST['address']) ?: "Alamat belum diisi";
     
     // Rate limiting for registration attempts
     if ((time() - $_SESSION['last_reg_attempt']) > $time_threshold) {
@@ -65,15 +66,12 @@ if (($_SESSION['reg_attempts'] >= 3) && (time() - $_SESSION['last_reg_attempt'] 
             $_SESSION['reg_attempts']++;
             $_SESSION['last_reg_attempt'] = time();
         } else {
-            // Hash the password with more secure options
-            $options = [
-                'cost' => 12,
-            ];
-            $hashed_password = password_hash($password, PASSWORD_ARGON2ID, $options);
+            // Hash the password
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
             
             // Insert new user
-            $insert_stmt = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
-            $insert_stmt->bind_param('sss', $name, $email, $hashed_password);
+            $insert_stmt = $conn->prepare("INSERT INTO users (name, email, password, address) VALUES (?, ?, ?, ?)");
+            $insert_stmt->bind_param('ssss', $name, $email, $hashed_password, $address);
             
             if ($insert_stmt->execute()) {
                 $success = 'Registrasi berhasil! Silakan login.';
@@ -234,6 +232,18 @@ if (($_SESSION['reg_attempts'] >= 3) && (time() - $_SESSION['last_reg_attempt'] 
                                     name="confirm-password"
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-agro-green focus:border-transparent" 
                                     placeholder="konfirmasi kata sandi Anda"
+                                >
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="address" class="block text-agro-dark mb-2">Alamat</label>
+                                <input 
+                                    type="text" 
+                                    id="address" 
+                                    name="address"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-agro-green focus:border-transparent" 
+                                    placeholder="masukkan alamat Anda"
+                                    value="<?php echo isset($_POST['address']) ? htmlspecialchars($_POST['address']) : ''; ?>"
                                 >
                             </div>
                             
